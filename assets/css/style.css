@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #211111;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  height: 12rem;
+}
+
+.header {
+  width: 100%;
+  min-height: 7em;
+  padding: 1em 3em;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.header .logotipo .a {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #222222;
+}
+.header .navbar .navbar-ul {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .navbar .navbar-ul li {
+  margin: 0 1em;
+}
+.header .navbar .navbar-ul li a {
+  color: #211111;
+  box-shadow: inset 0 0 0 0 #211111;
+  transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+.header .navbar .navbar-ul li a:hover {
+  color: #fff;
+  box-shadow: inset -200px 0 0 0 #211111;
+}
+
+.main {
+  text-align: center;
+}
+
+.fondoanimado {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #9f9f9f;
+}
+.fondoanimado .blob {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  overflow: hidden;
+  filter: blur(1em);
+}
+.fondoanimado .blob .blob-1, .fondoanimado .blob .blob-2, .fondoanimado .blob .blob-3, .fondoanimado .blob .blob-4 {
+  width: 100%;
+  height: 100%;
+  scale: 3.5;
+  animation: blob 20s ease infinite;
+}
+
+.presentacion {
+  width: 100%;
+  min-height: 20em;
+  font-family: "Raleway", sans-serif;
+  line-height: 6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #211111;
+  background-color: #ff99aa;
+}
+.presentacion .presentacion-nombre {
+  font-size: 4.5em;
+  font-weight: 100;
+  animation: aparecer-1 2s ease 1 both;
+}
+.presentacion .presentacion-especialidad {
+  font-size: 5.2em;
+  font-weight: bolder;
+  text-transform: uppercase;
+  animation: aparecer-1 2s ease 1 backwards;
+  animation-delay: 0.5s;
+}
+
+.acercade {
+  width: 100%;
+  min-height: 50em;
+}
+.acercade .acercade-titulo {
+  margin: 1em;
+  font-family: "Raleway", sans-serif;
+  font-size: 4em;
+  font-weight: 600;
+  color: #211111;
+}
+.acercade .acercade-titulo::before {
+  content: "";
+  width: 3.3em;
+  height: 1.3em;
+  display: inline;
+  border-bottom: 5px solid #211111;
+  position: absolute;
+}
+.acercade .acercade-separador {
+  width: 100%;
+  min-height: 20em;
+  margin: 1em 0 0 0;
+  padding: 5em 0;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: space-around;
+  background-color: #ff99aa;
+}
+.acercade .acercade-separador .acercade-parrafo {
+  padding: 0 5em 5em 5em;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.2em;
+  line-height: 2.5em;
+}
+.acercade .acercade-separador .acercade-foto {
+  height: 20em;
+  border-radius: 50%;
+  border: solid #fff 10px;
+}
+.acercade .tecnologias-titulo {
+  margin: 1em;
+  font-family: "Raleway", sans-serif;
+  font-size: 4em;
+  font-weight: 600;
+  color: #211111;
+}
+.acercade .tecnologias-titulo::before {
+  content: "";
+  width: 5.8em;
+  height: 1.3em;
+  display: inline;
+  border-bottom: 5px solid #211111;
+  position: absolute;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 10rem);
+  gap: 10em;
+  justify-content: center;
+}
+.grid .img {
+  height: 20vh;
+  width: 20vh;
+}
+.grid .img-2 {
+  height: 20vh;
+  width: 15vh;
+  margin-left: 1em;
+}
+
+@media screen and (max-width: 1225px) {
+  .grid {
+    grid-template-columns: repeat(2, 10em);
+  }
+}
+@media screen and (max-width: 589px) {
+  .grid {
+    grid-template-columns: repeat(1, 10em);
+    gap: 4em;
+  }
+  .grid .img-2 {
+    margin-left: 1.5em;
+  }
+}
+.footer {
+  width: 100%;
+  min-height: 10em;
+  margin: 5em 0 0 0;
+  padding: 0 0 1em 0;
+  text-align: center;
+  background-color: #ff99aa;
+}
+.footer .contacto {
+  color: #211111;
+}
+.footer .contacto .contacto-titulo {
+  padding: 1em 0 0.5em 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 5em;
+  text-transform: uppercase;
+}
+.footer .contacto .contacto-titulo span::before {
+  content: "";
+  width: 5.4em;
+  height: 1.5em;
+  display: inline;
+  border-bottom: 5px solid #211111;
+  position: absolute;
+}
+.footer .rrss {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: center;
+  text-align: center;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.footer .rrss li {
+  margin: 1em 1em;
+  display: flex;
+  flex-direction: column;
+}
+.navegacion {
+  width: 100%;
+  margin: 2em 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.navegacion h4 {
+  font-weight: 400;
+  padding: 0.5em;
+}
+
+.footer-derechos {
+  padding: 2em 0 0 0;
+  font-size: 0.7em;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+@media (max-width: 600px) {
+  .presentacion .presentacion-nombre {
+    font-size: 3.5em;
+  }
+  .acercade .acercade-titulo {
+    font-size: 2.9em;
+  }
+  .acercade .tecnologias-titulo {
+    font-size: 2.9em;
+  }
+}
+@media (max-width: 510px) {
+  .presentacion .presentacion-especialidad {
+    font-size: 4em;
+  }
+}
+@media (max-width: 480px) {
+  .footer .contacto .contacto-titulo {
+    font-size: 4em;
+  }
+}
+@media (max-width: 380px) {
+  .presentacion .presentacion-nombre {
+    font-size: 3em;
+  }
+  .presentacion .presentacion-especialidad {
+    font-size: 3.5em;
+  }
+  .acercade .acercade-titulo {
+    font-size: 2.5em;
+  }
+}
+@keyframes aparecer-1 {
+  from {
+    opacity: 0;
+    transform: translateY(18%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes blob {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
